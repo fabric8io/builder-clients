@@ -23,7 +23,7 @@ dockerTemplate {
     ws {
       checkout scm
 
-      def version = utils.isCI() ? "SNAPSHOT-${env.BRANCH_NAME}-${env.BUILD_NUMBER}" : getNewVersion{}
+      def version = utils.isCI() ? "SNAPSHOT-${env.BRANCH_NAME}-${env.BUILD_NUMBER}" : getNewVersion()
       def image = "fabric8/builder-clients:${version}"
 
       echo "Building image ${image}"
